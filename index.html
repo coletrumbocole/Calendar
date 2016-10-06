@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calendar</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel=stylesheet></link>
+  <link href="style.css" rel=stylesheet></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</head>
+<body ng-app="calApp">
+  <div ng-controller="CalendarCtrl">
+    <div class='container'>
+      
+      <div class='row' ng-cloak>
+        <div ng-repeat="day in days" ng-click='dayClick($index)' ng-class="day.class">
+          <p>
+            {{ day.day | dayOfWeek }}
+          </p>
+          <p>
+            {{ day.message }}
+          </p>
+        </div>
+      </div>
+      
+      <div class='row' ng-cloak>
+        <br>
+        <div class="col-xs-6 col-xs-offset-3" ng-hide="calendar.hideInput" >
+          <div class="input-group">
+            <input type="text" class="form-control" ng-model="days[calendar.activeDay].message">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" ng-click='done()'>Done</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

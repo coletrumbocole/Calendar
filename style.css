@@ -1,0 +1,19 @@
+.calendar-day {
+    position: relative;
+    min-height: .1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    float: left;
+    width: 14.2857142857%;
+    height: 6em;
+    border-color: black;
+    border-style: solid;
+    border-width: .1em;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.clicked {
+  background-color: grey;
+}
